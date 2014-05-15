@@ -17,7 +17,7 @@ __global__ void saxpy(int n, float a, float *x, float *y)
 
 int main()
 {
-	int N = 1<<20;
+	int N = 1<<23;
 	int size = N*sizeof(float);
 	printf("N = %d\n",N);
 
@@ -65,4 +65,5 @@ int main()
 	}
 	printf("Max error: %f\n", maxError);
 	printf("Succesfully performed SAXPY on %d elements in %f milliseconds.\n", N, milliseconds);
+	printf("Effective Bandwidth (GB/s): %f\n", N*4*3/milliseconds/1e6);
 }
